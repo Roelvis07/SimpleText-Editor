@@ -52,12 +52,9 @@ namespace SimpleText_Editor
             void delete(int pos, bool flagUndo)
             {
                 if (!flagUndo)
-                {
-                    string substr = s.Substring(s.Length - pos);
-                    undo.Push("2 " + substr);
-                }
-                s = s.Remove(s.Length - pos);
+                    undo.Push("2 " + s.Substring(s.Length - pos));
 
+                s = s.Remove(s.Length - pos);
             }
         }
         static void Main1(string[] args)
